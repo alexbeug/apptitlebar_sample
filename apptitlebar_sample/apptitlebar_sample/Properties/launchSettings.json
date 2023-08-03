@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "apptitlebar_sample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "apptitlebar_sample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
