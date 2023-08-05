@@ -8,7 +8,30 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
-    </StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <NavigationView
+            x:Name="MainNavigationView"
+            AlwaysShowHeader="False"
+            Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+            IsBackEnabled="{x:Bind ContentFrame.CanGoBack, Mode=OneWay}">
+            <NavigationView.MenuItems>
+                <NavigationViewItem
+                    Content="Home"
+                    Icon="Home"
+                    Tag="Home" />
+                <NavigationViewItem
+                    Content="Page1"
+                    Icon="Comment"
+                    Tag="Page1" />
+                <NavigationViewItem
+                    Content="Page2"
+                    Icon="PostUpdate"
+                    Tag="Page2" />
+            </NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame"/>
+        </NavigationView>
+    </Grid>
 </Window>
