@@ -10,9 +10,25 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <NavigationView
+
+        <StackPanel x:Name="AppTitleBar" 
+                    Orientation="Horizontal"
+                    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                    Grid.Row="0" 
+                    Height="32">
+            <TextBlock x:Name="AppTitleTextBlock" Text="apptitlebar_sample"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        TextWrapping="NoWrap"
+                        Style="{StaticResource CaptionTextBlockStyle}" 
+                        VerticalAlignment="Top"
+                        Margin="8,8,0,0"/>
+        </StackPanel>
+
+        <NavigationView Grid.Row="1"
             x:Name="MainNavigationView"
             AlwaysShowHeader="False"
             Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"

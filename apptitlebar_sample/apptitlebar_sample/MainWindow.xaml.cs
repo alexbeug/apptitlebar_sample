@@ -26,6 +26,9 @@ namespace apptitlebar_sample
         public MainWindow()
         {
             this.InitializeComponent();
+
+            ExtendsContentIntoTitleBar = true;
+            SetTitleBar(AppTitleBar);
         }
     }
 }
