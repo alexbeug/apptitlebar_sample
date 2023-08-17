@@ -10,15 +10,17 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="32"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <StackPanel x:Name="AppTitleBar" 
                     Orientation="Horizontal"
                     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-                    Grid.Row="0" 
-                    Height="32">
+                    Grid.Row="0"                    
+                    Height="32"
+                    Canvas.ZIndex="1"
+                    Margin="40,0,0,0">
             <Image Source="Assets/rodentia-icons_utilities-system-sensors.png"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
@@ -33,26 +35,30 @@
                         Margin="8,8,0,0"/>
         </StackPanel>
 
-      <NavigationView Grid.Row="1"
-          x:Name="MainNavigationView"
-          AlwaysShowHeader="False"
-          Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-          IsBackButtonVisible="Collapsed">
-        <NavigationView.MenuItems>
-          <NavigationViewItem
-              Content="Home"
-              Icon="Home"
-              Tag="Home" />
-          <NavigationViewItem
-              Content="Page1"
-              Icon="Comment"
-              Tag="Page1" />
-          <NavigationViewItem
-              Content="Page2"
-              Icon="PostUpdate"
-              Tag="Page2" />
-        </NavigationView.MenuItems>
-        <Frame x:Name="ContentFrame"/>
-      </NavigationView>
+        <NavigationView
+            x:Name="MainNavigationView"
+            AlwaysShowHeader="False"
+            Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+            IsBackButtonVisible="Visible"
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Canvas.ZIndex="0"
+>
+            <NavigationView.MenuItems>
+              <NavigationViewItem
+                  Content="Home"
+                  Icon="Home"
+                  Tag="Home" />
+              <NavigationViewItem
+                  Content="Page1"
+                  Icon="Comment"
+                  Tag="Page1" />
+              <NavigationViewItem
+                  Content="Page2"
+                  Icon="PostUpdate"
+                  Tag="Page2" />
+            </NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame"/>
+        </NavigationView>
     </Grid>
 </Window>
